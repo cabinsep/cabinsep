@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <!-- 设置页面的字符编码为UTF-8 -->
   <meta charset="UTF-8">
-  <!-- 设置页面标题，突出论文核心主题 -->
-  <title>CabinSep - 车内实时语音分离技术展示</title>
-  <!-- 声明使用的Jekyll版本，可用于技术追踪 -->
   <meta name="generator" content="Jekyll v3.9.0">
-  <!-- 优化OG元数据，用于社交媒体分享时展示的标题 -->
   <meta property="og:title" content="CabinSep: 车内实时语音分离创新方案">
   <meta property="og:locale" content="en_US">
-  <!-- 设置页面的规范链接，利于SEO -->
   <link rel="canonical" href="https://cabinsep.github.io/cabinsep/">
   <meta property="og:url" content="https://cabinsep.github.io/cabinsep/">
-  <!-- 设置Twitter卡片类型，用于在Twitter分享时的展示样式 -->
   <meta name="twitter:card" content="summary">
-  <!-- 响应式布局，根据设备宽度调整页面布局 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 设置页面主题颜色，提升视觉一致性 -->
   <meta name="theme-color" content="#157878">
-  <!-- 引入外部样式表，用于页面样式设计 -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 页面头部区域，可用于放置网站logo、导航栏等 -->
   <section class="page-header">
   </section>
-  <!-- 主要内容区域 -->
   <section class="main-content">
-    <!-- 论文标题，使用大标题并居中展示 -->
     <h1 style="text-align: center;">CabinSep: IR-Augmented Mask-Based MVDR for Real-Time In-car Speech Separation with Distributed Heterogeneous Arrays</h1>
     <!-- 目录标题 -->
     <h2>0. Contents</h2>
-    <!-- 目录列表，包含摘要和音频示例链接 -->
     <ol>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#samples">Samples</a></li>
     </ol>
-    <!-- 增加适当间距，提升页面可读性 -->
     <br><br>
-    <!-- 摘要标题，添加锚点方便链接跳转 -->
     <h2 id="abstract">1. Abstract</h2>
-    <p> 
       Front-end speech separation plays a vital role in human-car interaction systems. This paper presents CabinSep, a robust neural mask-based minimum variance distortionless response (MVDR) system. It overcomes the nonlinear distortions that are prevalent in current all-neural-network-driven solutions. We train the model to estimate speech and noise masks and apply MVDR solely during inference, thereby avoiding the numerical instability and ineffective noise reduction issues encountered in previous approaches. Our system incorporates multiple efficient modules that utilize channel information to enhance the separation capability. With a computational complexity of only 0.4G MACs, CabinSep achieves a 28.8% character error rate (CER) in real-world scenarios, outperforming state-of-the-art systems. Additionally, we evaluate various data augmentation methods using real-recorded impulse responses. By simulating more realistic training data, we improve speaker positioning accuracy and further reduce the CER.
       <br>
       <center><img src="cabinsep_framework.png" style="height:300px"/></center>
     <br><br>
     <h2 id="samples">2. Samples</h2>
-    <!-- <audio controls>
-      <source src="audio1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio> -->
+      Coming Soon!
   </section>
 </body>
 </html>
