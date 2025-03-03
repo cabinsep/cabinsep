@@ -1,1 +1,737 @@
-CabinSep
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Jekyll v3.9.0">
+  <meta property="og:locale" content="en_US">
+  <link rel="canonical" href="https://cabinsep.github.io/cabinsep/">
+  <meta property="og:url" content="https://cabinsep.github.io/cabinsep/">
+  <meta name="twitter:card" content="summary">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="page-header">
+  </section>
+  <section class="main-content">
+    <h1 style="text-align: center;">CabinSep: IR-Augmented Mask-Based MVDR for Real-Time In-car Speech Separation with Distributed Heterogeneous Arrays</h1>
+    <h2>0. Contents</h2>
+    <ol>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#samples">Samples</a></li>
+    </ol>
+    <h2 id="abstract">1. Abstract</h2>
+      Front-end speech separation plays a vital role in human-car interaction systems. This paper presents CabinSep, a robust neural mask-based minimum variance distortionless response (MVDR) system. It overcomes the nonlinear distortions that are prevalent in current all-neural-network-driven solutions. We train the model to estimate speech and noise masks and apply MVDR solely during inference, thereby avoiding the numerical instability and ineffective noise reduction issues encountered in previous approaches. Our system incorporates multiple efficient modules that utilize channel information to enhance the separation capability. With a computational complexity of only 0.4G MACs, CabinSep achieves a 28.8% character error rate (CER) in real-world scenarios, outperforming state-of-the-art systems. Additionally, we evaluate various data augmentation methods using real-recorded impulse responses. By simulating more realistic training data, we improve speaker positioning accuracy and further reduce the CER.
+      <br><br>
+      <center><img src="cabinsep_framework.png" style="height:600px"/></center>
+    <br><br>
+    <h2 id="samples">2. Samples</h2>
+    <p>Description</p>
+    <h3>2.1. Non Standard Postures</h3>
+      <p>Description</p>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Models</strong></th>
+            <th style="text-align: center"><strong>Zone 1</strong></th>
+            <th style="text-align: center"><strong>Zone 2</strong></th>
+            <th style="text-align: center"><strong>Zone 3</strong></th>
+            <th style="text-align: center"><strong>Zone 4</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left">Unprocessed Mixture</td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/unseparated_mixture/zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/origion_changjing2_youhou_qinaqing/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_0.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/unseparated_mixture/zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/origion_changjing2_youhou_qinaqing/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_1.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/unseparated_mixture/zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/origion_changjing2_youhou_qinaqing/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_2.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/unseparated_mixture/zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/origion_changjing2_youhou_qinaqing/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_3.wav" controls preload></audio>
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="text-align: left">FasNet-TAC</td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/fasnet_tac/zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/fasnet_tac/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch0.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/fasnet_tac/zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/fasnet_tac/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch1.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/fasnet_tac/zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/fasnet_tac/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch2.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/fasnet_tac/zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/fasnet_tac/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch3.wav" controls preload></audio>
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="text-align: left">DualSep-L</td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/dualsep/zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/dualsep/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch0.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/dualsep/zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/dualsep/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch1.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/dualsep/zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/dualsep/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch2.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/dualsep/zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/dualsep/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch3.wav" controls preload></audio>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="text-align: left">CabinSep-L-Stage1</td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s1/zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s1/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch0.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s1/zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s1/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch1.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s1/zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s1/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch2.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s1/zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s1/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch3.wav" controls preload></audio>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="text-align: left">CabinSep-L-Stage2</td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s2/zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s2/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch0.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s2/zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s2/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch1.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s2/zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s2/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch2.wav" controls preload></audio>
+              </div>
+            </td>
+            <td style="text-align: center">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="spectrum_png/non_standard_postures/cabinsep_s2/zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                <audio src="demo/non_standard_postures/cabinsep_s2/changjing2_mohuzuozi__changjing2_anjing_zuoziqianqing_youhou_ch3.wav" controls preload></audio>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    
+    <h3>2.2. Standard Postures</h3>
+    Text Label:<br>
+    Zone1: 时间 换一首给我一首歌的时间 (Time. Change another song. Play "Give Me a Song's Time" for me.)<br>
+    Zone2: 号门 空调温度调为二十一度空调风速调一挡 (Gate. Adjust the air conditioning temperature to 21 degrees Celsius and set the air conditioning fan speed to the first gear.)<br>
+    Zone3: 四个轮子的胎压都正常吗 (Are the tire pressures of all four wheels normal?)<br>
+    Zone4: 导航去高新区管理委员会 (Navigate to the Administrative Committee of the High-tech Zone.)<br>
+    The text below the audio in the table is the speech recognition result by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model. 
+    The red font represents incorrect character recognition, the black font represents correct character recognition, 
+    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+      <p>stationary</p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>Models</strong></th>
+              <th style="text-align: center"><strong>Zone 1</strong></th>
+              <th style="text-align: center"><strong>Zone 2</strong></th>
+              <th style="text-align: center"><strong>Zone 3</strong></th>
+              <th style="text-align: center"><strong>Zone 4</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Unprocessed Mixture</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample1_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/jingtai_anjing_4P_0.wav" controls preload></audio>
+                  <p>Text: 时间<r>导航去四个轮洞为二十五</r>的<r>手风路调一道</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample1_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/jingtai_anjing_4P_1.wav" controls preload></audio>
+                  <p>Text: <r>导航去四个门  口刚</r>为二十五<r>一首叫风路朝</r>一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample1_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/jingtai_anjing_4P_2.wav" controls preload></audio>
+                  <p>Text: <r>这个时间导航去</r>四个轮子<r>和他骸国还口</r>正常吗<r>风度球一档</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample1_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/jingtai_anjing_4P_3.wav" controls preload></audio>
+                  <p>Text: 导航去高<r>峰去环救人了丰富条衣的</r></p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">FasNet-TAC</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample1_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch0.wav" controls preload></audio>
+                  <p>Text: 时间<r>差一下</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample1_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch1.wav" controls preload></audio>
+                  <p>Text: <r>**</r>空调温度调为二十一度空调风<r>控潮*</r>一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample1_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch2.wav" controls preload></audio>
+                  <p>Text: 四个轮子的<r>太阳还</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample1_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch3.wav" controls preload></audio>
+                  <p>Text: 导航去高<r>兴</r>区管理委员会</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">DualSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample1_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/jingtai_anjing_4P_ch0.wav" controls preload></audio>
+                  <p>Text: 时间<r>翻</r>一<r>小</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample1_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/jingtai_anjing_4P_ch1.wav" controls preload></audio>
+                  <p>Text: <r>后面</r>空调温度调<r>约</r<>二十一度空调<r>丰</r>速调一<r>*</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample1_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/jingtai_anjing_4P_ch2.wav" controls preload></audio>
+                  <p>Text: <r>已经死</r>四个轮<r>这个太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample1_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/jingtai_anjing_4P_ch3.wav" controls preload></audio>
+                  <p>Text: 导航去高<r>山</r>区管理<r>馆然</r>会</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-S</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample1_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/jingtai_anjing_4P_ch0.wav" controls preload></audio>
+                  <p>Text: 时间<r>翻手*</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample1_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/jingtai_anjing_4P_ch1.wav" controls preload></audio>
+                  <p>Text: 号门空调温度调  <r>约</r> 二十一度空调  风<r>度</r>调一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample1_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/jingtai_anjing_4P_ch2.wav" controls preload></audio>
+                  <p>Text: 四个轮子的<r>太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample1_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/jingtai_anjing_4P_ch3.wav" controls preload></audio>
+                  <p>Text: 导航去高新区管理委员会</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample1_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/jingtai_anjing_4P_ch0.wav" controls preload></audio>
+                  <p>Text: 时间<r>翻手*</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample1_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/jingtai_anjing_4P_ch1.wav" controls preload></audio>
+                  <p>Text: 号门<r>控</r>调温度调<r>约</r>二十一度空调<r>封送</r>调一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample1_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/jingtai_anjing_4P_ch2.wav" controls preload></audio>
+                  <p>Text: 四个轮子的<r>太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample1_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/jingtai_anjing_4P_ch3.wav" controls preload></audio>
+                  <p>Text: 导航去高新区管理委员会</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+    <p>motion sample 1</p>
+    Text Label:<br>
+    Zone1: - (Nobody is speaking in Zone1)<br>
+    Zone2: 帮我找一下附近的停车场 (Help me find a nearby parking lot.)<br>
+    Zone3: 所有车窗打开百分之七十 (Open all the car windows by 70 percent.)<br>
+    Zone4: 打开把那个车子主驾按摩打开 (Open it. Turn on the driver's seat massage of that car.)<br>
+    The text below the audio in the table is the speech recognition result by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model.
+    The red font represents incorrect character recognition, the black font represents correct character recognition, 
+    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>Models</strong></th>
+              <th style="text-align: center"><strong>Zone 1</strong></th>
+              <th style="text-align: center"><strong>Zone 2</strong></th>
+              <th style="text-align: center"><strong>Zone 3</strong></th>
+              <th style="text-align: center"><strong>Zone 4</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Unprocessed Mixture</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample2_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_zuohou_0.wav" controls preload></audio>
+                  <p>Text: <r>可以帮我找一下</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample2_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_zuohou_1.wav" controls preload></audio>
+                  <p>Text: 帮我找一下<r>自己</r>的<r>房</r>车<r>上</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample2_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_zuohou_2.wav" controls preload></audio>
+                  <p>Text: 所有车窗打开百分之七十</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample2_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_zuohou_3.wav" controls preload></audio>
+                  <p>Text: <r>我才</r>把<r>所有</r>车<r>窗打开百分</r>按摩<r>时*</r></p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">FasNet-TAC</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample2_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_zuohou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample2_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_zuohou_ch1.wav" controls preload></audio>
+                  <p>Text: <r>等</r>我找<r>跳出本图</r>的<r>卡啡*</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample2_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_zuohou_ch2.wav" controls preload></audio>
+                  <p>Text: <r>***********</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample2_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_zuohou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>*************</r></p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">DualSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample2_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_zuohou_ch0.wav" controls preload></audio>
+                  <p>Text: <r>一步</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample2_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_zuohou_ch1.wav" controls preload></audio>
+                  <p>Text: 帮我找一下<r>父亲们组织找</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample2_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_zuohou_ch2.wav" controls preload></audio>
+                  <p>Text: <r>博演</r>车窗打开百分之七十</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample2_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_zuohou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>不告了阿伯找人******</r></p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-S</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample2_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_zuohou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample2_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_zuohou_ch1.wav" controls preload></audio>
+                  <p>Text: 帮我找一下附近的停车场 </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample2_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_zuohou_ch2.wav" controls preload></audio>
+                  <p>Text: 所有车窗打开百分之七十 </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample2_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_zuohou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>来刚来</r>把那个<r>村</r>子<r>的总</r>驾按摩打开</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample2_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_zuohou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample2_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_zuohou_ch1.wav" controls preload></audio>
+                  <p>Text: 帮我找一下附近的停车场 </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample2_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_zuohou_ch2.wav" controls preload></audio>
+                  <p>Text: 所有车窗打开百分之七十 </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample2_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_zuohou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>咱快</r>把<r>**村</r>子<r>总驾</r>按摩打开</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+    <p>motion sample 2</p>
+    Text Label:<br>
+    Zone1: - (Nobody is speaking in Zone1)<br>
+    Zone2: 到达目的地后还有多少电量 (How much battery power is left after reaching the destination?)<br>
+    Zone3: - (Nobody is speaking in Zone3)<br>
+    Zone4: 呃播放一首小白兔白又白 (Umm, play the song "The Little White Rabbit is White and White".)<br>
+    The text below the audio in the table is the speech recognition result by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model.
+    The red font represents incorrect character recognition, the black font represents correct character recognition, 
+    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>Models</strong></th>
+              <th style="text-align: center"><strong>Zone 1</strong></th>
+              <th style="text-align: center"><strong>Zone 2</strong></th>
+              <th style="text-align: center"><strong>Zone 3</strong></th>
+              <th style="text-align: center"><strong>Zone 4</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Unprocessed Mixture</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample3_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_0.wav" controls preload></audio>
+                  <p>Text: <r>到打不过放一思全白还有一回多少电量</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample3_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_1.wav" controls preload></audio>
+                  <p>Text: 到达<r>莫高方一</r>后<r>小白才</r>有多少电<r>荡</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample3_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_2.wav" controls preload></audio>
+                  <p>Text: <r>报道播放一则小白兔白月白好电话</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/noisy/sample3_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/noisy/dongtai_fujia_youhou_3.wav" controls preload></audio>
+                  <p>Text: <r>导</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">FasNet-TAC</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample3_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample3_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_ch1.wav" controls preload></audio>
+                  <p>Text: 到达目<r>击</r>地后还有<r>有</r>多少<r>架当</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample3_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_ch2.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/fasnet-tac/sample3_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/fasnet-tac/dongtai_fujia_youhou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>好</r>播放一<r>张</r>小白兔<r>子蓝就</r>白</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">DualSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample3_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample3_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_ch1.wav" controls preload></audio>
+                  <p>Text: 到达目<r>击</r>地后<r>才</r>有多少电<r>报</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample3_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_ch2.wav" controls preload></audio>
+                  <p>Text: <r>你</r> </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/dualsep/sample3_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/dualsep/dongtai_fujia_youhou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>*</r>播放<r>好</r>一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-S</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample3_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample3_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_ch1.wav" controls preload></audio>
+                  <p>Text: 到达目的地后还有多少电<r>话</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample3_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_ch2.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-S/sample3_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-S/dongtai_fujia_youhou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>*</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample3_1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_ch0.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample3_2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_ch1.wav" controls preload></audio>
+                  <p>Text: 到达目的地后<r>才</r>有多少电量</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample3_3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_ch2.wav" controls preload></audio>
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <img src="spectrum_png/cabinsep-L/sample3_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
+                  <audio src="demo/cabinsep-L/dongtai_fujia_youhou_ch3.wav" controls preload></audio>
+                  <p>Text: <r>*</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+  </section>
+</body>
+</html>
+
