@@ -743,7 +743,7 @@
     <br> 
     The red font in the following table represents incorrect character recognition, the black font represents correct character recognition, 
     the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
-            <table>
+      <table>
           <thead>
             <tr>
               <th style="text-align: center"><strong>Models</strong></th>
@@ -876,16 +876,9 @@
           </tbody>
         </table>
     
-
-    <p>motion sample 2</p>
-    Text Label:<br>
-    Zone1: - (Nobody is speaking in Zone1)<br>
-    Zone2: 到达目的地后还有多少电量 (How much battery power is left after reaching the destination?)<br>
-    Zone3: - (Nobody is speaking in Zone3)<br>
-    Zone4: 呃播放一首小白兔白又白 (Umm, play the song "The Little White Rabbit is White and White".)<br>
-    The text below the audio in the table is the speech recognition result by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model.
-    The red font represents incorrect character recognition, the black font represents correct character recognition, 
-    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+    <h4>Audio Sample 2: Motion</h4>
+        <p>Speakers are speaking in <b>Zone2 and Zone4</b>.</p>
+        <h5>Separated Audios</h5>
         <table>
           <thead>
             <tr>
@@ -1058,6 +1051,149 @@
             </tr>
           </tbody>
         </table>
+    
+    <h5>Speech Recognition Results of Audio Sample 3</h5>
+    Text Label:<br>
+    Zone1: - (Nobody is speaking in Zone1)<br>
+    Zone2: 到达目的地后还有多少电量 (How much battery power is left after reaching the destination?)<br>
+    Zone3: - (Nobody is speaking in Zone3)<br>
+    Zone4: 呃播放一首小白兔白又白 (Umm, play the song "The Little White Rabbit is White and White".)<br>
+    <br> 
+    The red font in the following table represents incorrect character recognition, the black font represents correct character recognition, 
+    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>Models</strong></th>
+              <th style="text-align: center"><strong>Zone 1</strong></th>
+              <th style="text-align: center"><strong>Zone 2</strong></th>
+              <th style="text-align: center"><strong>Zone 3</strong></th>
+              <th style="text-align: center"><strong>Zone 4</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Unprocessed Mixture</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>到打不过放一思全白还有一回多少电量</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 到达<r>莫高方一</r>后<r>小白才</r>有多少电<r>荡</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>报道播放一则小白兔白月白好电话</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>导</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">FasNet-TAC</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 到达目<r>击</r>地后还有<r>有</r>多少<r>架当</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>好</r>播放一<r>张</r>小白兔<r>子蓝就</r>白</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">DualSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 到达目<r>击</r>地后<r>才</r>有多少电<r>报</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>你</r> </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>*</r>播放<r>好</r>一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-S</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 到达目的地后还有多少电<r>话</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>*</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 到达目的地后<r>才</r>有多少电量</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: - </p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>*</r>播放一首小白兔白<r>月</r>白</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
 
   </section>
 </body>
