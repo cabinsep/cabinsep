@@ -20,6 +20,10 @@
     <ol>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#samples">Samples</a></li>
+        <ol>
+            <li><a href="#non-standard-postures">2.1. Non-standard Postures</a></li>
+            <li><a href="#standard-postures">2.2. Standard Postures</a></li>
+        </ol>
     </ol>
     <h2 id="abstract">1. Abstract</h2>
       Front-end speech separation plays a vital role in human-car interaction systems. This paper presents CabinSep, a robust neural mask-based minimum variance distortionless response (MVDR) system. It overcomes the nonlinear distortions that are prevalent in current all-neural-network-driven solutions. We train the model to estimate speech and noise masks and apply MVDR solely during inference, thereby avoiding the numerical instability and ineffective noise reduction issues encountered in previous approaches. Our system incorporates multiple efficient modules that utilize channel information to enhance the separation capability. With a computational complexity of only 0.4G MACs, CabinSep achieves a 28.8% character error rate (CER) in real-world scenarios, outperforming state-of-the-art systems. Additionally, we evaluate various data augmentation methods using real-recorded impulse responses. By simulating more realistic training data, we improve speaker positioning accuracy and further reduce the CER.
@@ -27,13 +31,35 @@
       <center><img src="cabinsep_framework.png" style="height:600px"/></center>
     <br><br>
     <h2 id="samples">2. Samples</h2>
-    <h3>2.1. Non Standard Postures</h3>
+    <br>
+    <p>The audio samples are divided into two major categories, that is, the two situations mentioned in the thesis where the speaker is in a non-standard sitting posture and a standard sitting posture.<br>
+      When the speaker is in a non-standard sitting posture, we show a scene where the speaker is located in Zone 4, 
+      and the audio sample demonstrates the effectiveness of the method we proposed for data augmentation by combining real-recorded IRs.<br>
+      When the speaker is in a standard sitting posture, we display a total of 3 different samples. One of them is a scene when the car is stationary, 
+      and the other two are scenes when the car is in motion. In the scenes where the car is in motion, additional noises such as the sound of wind and tire friction will be introduced. 
+      In the scene where the car is stationary, people are speaking in all 4 zones, and there is serious overlapping. For the two samples of the scenes where the car is in motion, 
+      there are 3 speakers and 2 speakers respectively, and there is also the phenomenon of overlapping.<br>
+      <br><br>
+    </p>
+    <h3 id="non-standard-postures">2.1. Non-standard Postures</h3>
+      <br>
       <p>We selected an audio clip of "non-standard posture" located in Zone 4 as an example. 
-      The content of the voice is the wake-up word of a Keyword Spotting System (KWS) system. We use the wake-up accuracy rate of the KWS system to represent the positioning accuracy rate. 
-      In other words, in the following example, the KWS system only needs to be woken up in Zone 4.<br>
-      The following photos specifically demonstrate the "non-standard posture".</p>
-      <center><img src="non_standard_posture_pic.png" style="height:600px"/></center>
-      
+      The content of the voice is the wake-up word of a keyword spotting system (KWS) system. We use the wake-up accuracy rate of the KWS system to represent the positioning accuracy rate. 
+      In other words, in the following example, the KWS system only needs to be woken up in Zone 4.
+      The following figure specifically demonstrates this scene.</p>
+    <br><br>
+<!--       <center><img src="non_standard_posture_pic.png" style="height:600px"/></center> -->
+      <figure style="text-align: center;">
+        <img src="non_standard_posture_pic.png" style="height:600px" />
+        <figcaption>This picture is a schematic diagram of "non-standard posture" and "standard posture". 
+          The two photos on the left show the scene when the speaker is located in Zone 4 and is in a "non-standard posture" at the same time, 
+          corresponding to the position of the blue dot in the middle schematic diagram, which is also the position of the speaker in the "non-standard posture" audio sample. 
+          The two photos on the right are the corresponding schematic diagrams of the speaker in a "standard posture" when located in Zone 4.</figcaption>
+      </figure>
+    <br><br>
+    <p>The following table shows the separation effects of different models on this "non-standard posture" audio sample. 
+      Only CabinSep-L-stage2 was trained using the data augmentation method we proposed, and it can be seen that the separation effect has been significantly improved.</p>
+    <br>    
       <table>
         <thead>
           <tr>
@@ -188,7 +214,7 @@
       </table>
 
     
-    <h3>2.2. Standard Postures</h3>
+    <h3 id="standard-postures">2.2. Standard Postures</h3>
     Text Label:<br>
     Zone1: 时间 换一首给我一首歌的时间 (Time. Change another song. Play "Give Me a Song's Time" for me.)<br>
     Zone2: 号门 空调温度调为二十一度空调风速调一挡 (Gate. Adjust the air conditioning temperature to 21 degrees Celsius and set the air conditioning fan speed to the first gear.)<br>
