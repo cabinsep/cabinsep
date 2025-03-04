@@ -31,23 +31,19 @@
       <center><img src="cabinsep_framework.png" style="height:600px"/></center>
     <br><br>
     <h2 id="samples">2. Samples</h2>
-    <br>
     <p>The audio samples are divided into two major categories, that is, the two situations mentioned in the thesis where the speaker is in a non-standard sitting posture and a standard sitting posture.<br>
       When the speaker is in a non-standard sitting posture, we show a scene where the speaker is located in Zone 4, 
-      and the audio sample demonstrates the effectiveness of the method we proposed for data augmentation by combining real-recorded IRs.<br>
+      and the audio sample demonstrates the effectiveness of the method we proposed for data augmentation by combining real-recorded IRs.
       When the speaker is in a standard sitting posture, we display a total of 3 different samples. One of them is a scene when the car is stationary, 
       and the other two are scenes when the car is in motion. In the scenes where the car is in motion, additional noises such as the sound of wind and tire friction will be introduced. 
       In the scene where the car is stationary, people are speaking in all 4 zones, and there is serious overlapping. For the two samples of the scenes where the car is in motion, 
-      there are 3 speakers and 2 speakers respectively, and there is also the phenomenon of overlapping.<br>
-      <br><br>
+      there are 3 speakers and 2 speakers respectively, and there is also the phenomenon of overlapping.
     </p>
     <h3 id="non-standard-postures">2.1. Non-standard Postures</h3>
-      <br>
       <p>We selected an audio clip of "non-standard posture" located in Zone 4 as an example. 
       The content of the voice is the wake-up word of a keyword spotting system (KWS) system. We use the wake-up accuracy rate of the KWS system to represent the positioning accuracy rate. 
       In other words, in the following example, the KWS system only needs to be woken up in Zone 4.
       The following figure specifically demonstrates this scene.</p>
-    <br><br>
 <!--       <center><img src="non_standard_posture_pic.png" style="height:600px"/></center> -->
       <figure style="text-align: center;">
         <img src="non_standard_posture_pic.png" style="height:600px" />
@@ -215,15 +211,11 @@
 
     
     <h3 id="standard-postures">2.2. Standard Postures</h3>
-    Text Label:<br>
-    Zone1: 时间 换一首给我一首歌的时间 (Time. Change another song. Play "Give Me a Song's Time" for me.)<br>
-    Zone2: 号门 空调温度调为二十一度空调风速调一挡 (Gate. Adjust the air conditioning temperature to 21 degrees Celsius and set the air conditioning fan speed to the first gear.)<br>
-    Zone3: 四个轮子的胎压都正常吗 (Are the tire pressures of all four wheels normal?)<br>
-    Zone4: 导航去高新区管理委员会 (Navigate to the Administrative Committee of the High-tech Zone.)<br>
-    The text below the audio in the table is the speech recognition result by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model. 
-    The red font represents incorrect character recognition, the black font represents correct character recognition, 
-    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
-      <p>stationary</p>
+    <p>We present a total of 3 samples when the speaker is in the "standard posture", 
+      along with the speech recognition results by open-sourced <a href="https://github.com/wenet-e2e/wenet/blob/main/examples/wenetspeech/s0/">WeNet</a> ASR model corresponding to each audio. </p>
+      <h4>Audio Sample 1: Stationary</h4>
+        <p>Speakers are speaking in all of the 4 zones.</p>
+        <h5>Separated Audios</h5>
         <table>
           <thead>
             <tr>
@@ -262,30 +254,6 @@
                 </div>
               </td>
             </tr>
-
-<!--             <tr>
-              <td style="text-align: left">- Text</td>
-              <td style="text-align: center">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                  <p>Text: 时间<r>导航去四个轮洞为二十五</r>的<r>手风路调一道</r></p>
-                </div>
-              </td>
-              <td style="text-align: center">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                  <p>Text: <r>导航去四个门  口刚</r>为二十五<r>一首叫风路朝</r>一档</p>
-                </div>
-              </td>
-              <td style="text-align: center">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                  <p>Text: <r>这个时间导航去</r>四个轮子<r>和他骸国还口</r>正常吗<r>风度球一档</r></p>
-                </div>
-              </td>
-              <td style="text-align: center">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                  <p>Text: 导航去高<r>峰去环救人了丰富条衣的</r></p>
-                </div>
-              </td>
-            </tr> -->
             
             <tr>
               <td style="text-align: left">FasNet-TAC</td>
@@ -411,6 +379,147 @@
                   <img src="spectrum_png/cabinsep-L/sample1_4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
                   <audio src="demo/cabinsep-L/jingtai_anjing_4P_ch3.wav" controls preload></audio>
 <!--                   <p>Text: 导航去高新区管理委员会</p> -->
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+    <h5>Speech Recognition Results of Audio Sample 1</h5>
+    Text Label:<br>
+    Zone1: 时间 换一首给我一首歌的时间 (Time. Change another song. Play "Give Me a Song's Time" for me.)<br>
+    Zone2: 号门 空调温度调为二十一度空调风速调一挡 (Gate. Adjust the air conditioning temperature to 21 degrees Celsius and set the air conditioning fan speed to the first gear.)<br>
+    Zone3: 四个轮子的胎压都正常吗 (Are the tire pressures of all four wheels normal?)<br>
+    Zone4: 导航去高新区管理委员会 (Navigate to the Administrative Committee of the High-tech Zone.)<br> 
+    The red font in the following table represents incorrect character recognition, the black font represents correct character recognition, 
+    the "*" represents missing recognized character, and the "-" represents that no speech is recognized in the audio.<br>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>Models</strong></th>
+              <th style="text-align: center"><strong>Zone 1</strong></th>
+              <th style="text-align: center"><strong>Zone 2</strong></th>
+              <th style="text-align: center"><strong>Zone 3</strong></th>
+              <th style="text-align: center"><strong>Zone 4</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Unprocessed Mixture</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 时间<r>导航去四个轮洞为二十五</r>的<r>手风路调一道</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>导航去四个门  口刚</r>为二十五<r>一首叫风路朝</r>一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>这个时间导航去</r>四个轮子<r>和他骸国还口</r>正常吗<r>风度球一档</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 导航去高<r>峰去环救人了丰富条衣的</r></p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">FasNet-TAC</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 时间<r>差一下</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>**</r>空调温度调为二十一度空调风<r>控潮*</r>一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 四个轮子的<r>太阳还</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 导航去高<r>兴</r>区管理委员会</p>
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td style="text-align: left">DualSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 时间<r>翻</r>一<r>小</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>后面</r>空调温度调<r>约</r<>二十一度空调<r>丰</r>速调一<r>*</r></p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: <r>已经死</r>四个轮<r>这个太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 导航去高<r>山</r>区管理<r>馆然</r>会</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-S</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 时间<r>翻手*</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 号门空调温度调  <r>约</r> 二十一度空调  风<r>度</r>调一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 四个轮子的<r>太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 导航去高新区管理委员会</p>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td style="text-align: left">CabinSep-L</td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 时间<r>翻手*</r>给我一首歌的时间</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 号门<r>控</r>调温度调<r>约</r>二十一度空调<r>封送</r>调一档</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 四个轮子的<r>太阳</r>都正常吗</p>
+                </div>
+              </td>
+              <td style="text-align: center">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Text: 导航去高新区管理委员会</p>
                 </div>
               </td>
             </tr>
