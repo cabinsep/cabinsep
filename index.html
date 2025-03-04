@@ -31,18 +31,19 @@
       <center><img src="cabinsep_framework.png" style="height:600px"/></center>
     <br><br>
     <h2 id="samples">2. Samples</h2>
-    <p>The audio samples are divided into two major categories, that is, the two situations mentioned in the thesis where the speaker is in a non-standard sitting posture and a standard sitting posture.<br>
+    <p>The audio samples are divided into two major categories, that is, the two situations mentioned in the thesis where the speaker is in a non-standard sitting posture and a standard sitting posture.
       When the speaker is in a non-standard sitting posture, we show a scene where the speaker is located in Zone 4, 
       and the audio sample demonstrates the effectiveness of the method we proposed for data augmentation by combining real-recorded IRs.
       When the speaker is in a standard sitting posture, we display a total of 3 different samples. One of them is a scene when the car is stationary, 
       and the other two are scenes when the car is in motion. In the scenes where the car is in motion, additional noises such as the sound of wind and tire friction will be introduced. 
       In the scene where the car is stationary, people are speaking in all 4 zones, and there is serious overlapping. For the two samples of the scenes where the car is in motion, 
-      there are 3 speakers and 2 speakers respectively, and there is also the phenomenon of overlapping.
+      there are 3 speakers and 2 speakers respectively, and there is also the phenomenon of overlapping.<br>
+      It is worth noting that all the <b>audio samples are real-recorded</b> inside the vehicle.
     </p>
     <h3 id="non-standard-postures">2.1. Non-standard Postures</h3>
       <p>We selected an audio clip of "non-standard posture" located in Zone 4 as an example. 
       The content of the voice is the wake-up word of a keyword spotting system (KWS) system. We use the wake-up accuracy rate of the KWS system to represent the positioning accuracy rate. 
-      In other words, in the following example, the KWS system only needs to be woken up in Zone 4.
+      In other words, in the following example, the KWS system only needs to be woken up in <b>Zone 4</b>.
       The following figure specifically demonstrates this scene.</p>
 <!--       <center><img src="non_standard_posture_pic.png" style="height:600px"/></center> -->
       <figure style="text-align: center;">
@@ -217,6 +218,13 @@
         <p>Speakers are speaking in all of the 4 zones.</p>
         <h5>Separated Audios</h5>
         <table>
+          <colgroup>
+            <col style="width: 400px;">
+            <col style="width: 500px;">
+            <col style="width: 500px;">
+            <col style="width: 500px;">
+            <col style="width: 500px;">
+          </colgroup>
           <thead>
             <tr>
               <th style="text-align: center"><strong>Models</strong></th>
@@ -261,28 +269,28 @@
                 <div style="display: flex; flex-direction: column; align-items: center;">
                   <img src="spectrum_png/fasnet-tac/sample1_zone1.png" alt="Sample 1 Image" style="width:500px;height:auto;">
                   <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch0.wav" controls preload></audio>
-<!--                   <p>Text: 时间<r>差一下</r>给我一首歌的时间</p> -->
+                  <p>Text: 时间<r>差一下</r>给我一首歌的时间</p>
                 </div>
               </td>
               <td style="text-align: center">
                 <div style="display: flex; flex-direction: column; align-items: center;">
                   <img src="spectrum_png/fasnet-tac/sample1_zone2.png" alt="Sample 2 Image" style="width:500px;height:auto;">
                   <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch1.wav" controls preload></audio>
-<!--                   <p>Text: <r>**</r>空调温度调为二十一度空调风<r>控潮*</r>一档</p> -->
+                  <p>Text: <r>**</r>空调温度调为二十一度空调风<r>控潮*</r>一档</p>
                 </div>
               </td>
               <td style="text-align: center">
                 <div style="display: flex; flex-direction: column; align-items: center;">
                   <img src="spectrum_png/fasnet-tac/sample1_zone3.png" alt="Sample 3 Image" style="width:500px;height:auto;">
                   <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch2.wav" controls preload></audio>
-<!--                   <p>Text: 四个轮子的<r>太阳还</r>都正常吗</p> -->
+                  <p>Text: 四个轮子的<r>太阳还</r>都正常吗</p>
                 </div>
               </td>
               <td style="text-align: center">
                 <div style="display: flex; flex-direction: column; align-items: center;">
                   <img src="spectrum_png/fasnet-tac/sample1_zone4.png" alt="Sample 4 Image" style="width:500px;height:auto;">
                   <audio src="demo/fasnet-tac/jingtai_anjing_4P_ch3.wav" controls preload></audio>
-<!--                   <p>Text: 导航去高<r>兴</r>区管理委员会</p> -->
+                  <p>Text: 导航去高<r>兴</r>区管理委员会</p>
                 </div>
               </td>
             </tr>
